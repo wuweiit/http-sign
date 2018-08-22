@@ -69,6 +69,7 @@ public final class SignUtils {
         String toSignEncoder = "";
         try {
             toSignEncoder = URLEncoder.encode(toSign.toString(), "utf-8");
+            toSignEncoder = toSignEncoder.replaceAll("\\+", "%20");
             LOGGER.debug("toSignEncoder Str= {}", toSignEncoder);
         } catch (UnsupportedEncodingException e) {
             LOGGER.error("{}", e.getMessage());
