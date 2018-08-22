@@ -9,9 +9,13 @@ import org.slf4j.LoggerFactory;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.*;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 /**
  * <pre>
@@ -61,10 +65,18 @@ public final class SignUtils {
         }
 
         toSign.append("key=").append(signKey);
+        LOGGER.debug("toSign Str= {}", toSign);
+        String toSignEncoder = "";
+        try {
+            toSignEncoder = URLEncoder.encode(toSign.toString(), "utf-8");
+            LOGGER.debug("toSignEncoder Str= {}", toSignEncoder);
+        } catch (UnsupportedEncodingException e) {
+            LOGGER.error("{}", e.getMessage());
+        }
         if (SignType.HMAC_SHA256.equals(signType)) {
-            return createHmacSha256Sign(toSign.toString(), signKey);
+            return createHmacSha256Sign(toSignEncoder, signKey);
         } else {
-            return DigestUtils.md5Hex(toSign.toString()).toUpperCase();
+            return DigestUtils.md5Hex(toSignEncoder).toUpperCase();
         }
     }
 
