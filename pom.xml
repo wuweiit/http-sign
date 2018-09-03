@@ -134,16 +134,15 @@
     </scm>
 
 
-
-
+    <!--  发布管理  -->
     <distributionManagement>
-        <repository>
-            <id>maven-releases</id>
-            <url>http://192.168.88.159:8081/repository/maven-releases/</url>
-        </repository>
         <snapshotRepository>
-            <id>maven-snapshots</id>
-            <url>http://192.168.88.159:8081/repository/maven-snapshots/</url>
+            <id>oss</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
+        <repository>
+            <id>oss</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
     </distributionManagement>
 </project>
