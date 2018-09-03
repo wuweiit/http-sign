@@ -1,4 +1,4 @@
-package com.byit.common.sign;
+package com.wuweibi.common.sign;
 
 import com.google.common.collect.Lists;
 import org.apache.commons.codec.binary.Hex;

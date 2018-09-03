@@ -1,11 +1,11 @@
-package com.byit.common.sign;
+package com.wuweibi.common.sign;
 /**
  * Created by marker on 2018/8/21.
  */
 
 /**
  * @author marker
- * @create 2018-08-21 16:06
+ *  2018-08-21 16:06
  **/
 public enum SignType {
 

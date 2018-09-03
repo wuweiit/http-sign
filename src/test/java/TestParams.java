@@ -2,7 +2,7 @@
  * Created by marker on 2018/8/21.
  */
 
-import com.byit.common.sign.SignUtils;
+import com.wuweibi.common.sign.SignUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

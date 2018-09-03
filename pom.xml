@@ -4,10 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.byit.common</groupId>
+    <groupId>com.wuweibi</groupId>
     <artifactId>sign</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1</version>
 
+
+
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Sign is Encryption request tool</description>
+    <url>https://github.com/wuweiit/http-sign</url>
 
     <build>
         <resources>
@@ -17,6 +23,49 @@
         </resources>
 
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Javadoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Gpg Signature  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
@@ -28,21 +77,6 @@
                         <verbose/>
                     </compilerArguments>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.4</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <phase>verify</phase><!--  要绑定到的生命周期的阶段 在verify之后，install之前执行下面指定的goal -->
-                        <goals>
-                            <goal>jar-no-fork</goal><!-- 类似执行mvn source:jar -->
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
         </plugins>
@@ -76,6 +110,29 @@
             <version>18.0</version>
         </dependency>
     </dependencies>
+
+
+    <!-- 项目成员团体信息 -->
+    <developers>
+        <developer>
+            <name>marker</name>
+            <email>admin@wuweibi.com</email>
+            <organization>wuweiit</organization>
+            <organizationUrl>http://www.yl-blog.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>
+            scm:git:https://github.com/wuweiit/http-sign.git
+        </connection>
+        <developerConnection>
+            scm:git:https://github.com/wuweiit/http-sign.git
+        </developerConnection>
+        <url>https://github.com/wuweiit/http-sign</url>
+        <tag>v1.0</tag>
+    </scm>
+
 
 
 
