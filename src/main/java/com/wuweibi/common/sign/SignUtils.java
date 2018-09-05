@@ -69,7 +69,13 @@ public final class SignUtils {
         String toSignEncoder = "";
         try {
             toSignEncoder = URLEncoder.encode(toSign.toString(), "utf-8");
+            // // "; / ? : @ & = + $ , #"
             toSignEncoder = toSignEncoder.replaceAll("\\+", "%20");
+            toSignEncoder = toSignEncoder.replaceAll("@", "%40");
+            toSignEncoder = toSignEncoder.replaceAll("#", "%23");
+            toSignEncoder = toSignEncoder.replaceAll("&", "%26");
+            toSignEncoder = toSignEncoder.replaceAll("\\?", "%3F");
+            toSignEncoder = toSignEncoder.replaceAll("%21", "!");
             LOGGER.debug("toSignEncoder Str= {}", toSignEncoder);
         } catch (UnsupportedEncodingException e) {
             LOGGER.error("{}", e.getMessage());
