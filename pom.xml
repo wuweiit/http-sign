@@ -6,7 +6,7 @@
 
     <groupId>com.wuweibi</groupId>
     <artifactId>sign</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.1</version>
 
 
 
@@ -134,7 +134,7 @@
     </scm>
 
 
-    <!--  发布管理
+    <!--  发布管理-->
     <distributionManagement>
         <snapshotRepository>
             <id>oss</id>
@@ -144,20 +144,26 @@
             <id>oss</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-    </distributionManagement>-->
-
-
-
-
-
-    <distributionManagement>
-        <repository>
-            <id>maven-releases</id>
-            <url>http://192.168.88.159:8081/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>maven-snapshots</id>
-            <url>http://192.168.88.159:8081/repository/maven-snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
-</project>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+
+
+    <!--
+       <distributionManagement>
+           <repository>
+               <id>maven-releases</id>
+               <url>http://192.168.88.159:8081/repository/maven-releases/</url>
+           </repository>
+           <snapshotRepository>
+               <id>maven-snapshots</id>
+               <url>http://192.168.88.159:8081/repository/maven-snapshots/</url>
+           </snapshotRepository>
+       </distributionManagement>-->
+   </project>
