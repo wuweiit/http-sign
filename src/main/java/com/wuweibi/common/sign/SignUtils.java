@@ -22,17 +22,20 @@ import java.util.TreeMap;
  * 签名相关工具类.
  * </pre>
  *
- * @author wangx
+ * @author marker
  */
 public final class SignUtils {
+
     /**
      * 日志
      */
     private static final Logger LOGGER = LoggerFactory.getLogger(SignUtils.class);
 
 
-    private SignUtils() {
-    }
+    /**
+     * 私有构造
+     */
+    private SignUtils() { }
 
 
 

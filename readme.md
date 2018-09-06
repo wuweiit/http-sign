@@ -11,7 +11,7 @@
 ```
     <dependency>
         <groupId>com.wuweiit</groupId>
-        <artifactId>sign</artifactId>
+        <artifactId>common-sign</artifactId>
         <version>0.0.1</version>
     </dependency>
 ```

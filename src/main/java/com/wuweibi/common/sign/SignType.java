@@ -4,6 +4,9 @@ package com.wuweibi.common.sign;
  */
 
 /**
+ *
+ * 签名类型
+ *
  * @author marker
  *  2018-08-21 16:06
  **/
